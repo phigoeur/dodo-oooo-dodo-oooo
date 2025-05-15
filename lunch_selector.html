@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>吃甚？</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="text-align: center; padding: 20px;">
+    <h2>吃甚？</h2>
+    <button onclick="pickRestaurant()" style="padding: 10px 20px; font-size: 18px;">
+        点我抽签
+    </button>
+    <p id="result" style="font-size: 24px; color: #e67e22; margin-top: 20px;"></p>
+
+    <script>
+        const options = [
+            "A1", "A2", "A3", "B1", "B2", "B3",
+            "C1", "C2", "C3", "T1", "T2", "T3",
+            "E", "daoke", "上岸串串"
+        ];
+
+        function pickRestaurant() {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            document.getElementById("result").innerHTML = 
+                `今日推荐餐厅：<b>${options[randomIndex]}</b>`;
+        }
+    </script>
+</body>
+</html>
